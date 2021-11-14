@@ -46,9 +46,7 @@ def main():
 
     stringio = StringIO(path.getvalue().decode("utf-8"))
     string_data = stringio.read()
-    sleep(5)
-    st.footer()
-
+    sleep(3)
     #summaries = [summarizer(s) for s in chunks(string_data, 4_000)]
 
     if summaries:
