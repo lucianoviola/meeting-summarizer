@@ -22,9 +22,13 @@ def query(payload, model_id, api_token):
     response = requests.post(API_URL, headers=headers, json=payload)
     return response.json()
 
+@st.cache
+def load_model():
+    return pipeline("summarization", model="lidiya/bart-large-xsum-samsum")
+
 
 def main():
-    summarizer = pipeline("summarization", model="lidiya/bart-large-xsum-samsum")
+    summarizer = load_model
     path = st.file_uploader("Upload transcription", type=['csv', 'txt'])
     if not path:
         st.write("Upload a .csv or .xlsx file to get started")
