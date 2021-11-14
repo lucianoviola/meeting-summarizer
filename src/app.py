@@ -6,7 +6,7 @@ from transformers import pipeline
 
 
 """
-# Meeting summarizer
+# Boring Meeting Summarizer
 """
 
 
@@ -36,9 +36,9 @@ def main():
     summaries = [summarizer(s) for s in chunks(string_data, 4_000)]
 
     if summaries:
-        st.write('Summary:')
+        st.write('### Summary:')
         for s in summaries:
-            st.write(s[0]['summary_text'])
+            st.write('- ' + s[0]['summary_text'])
 
 
 main()
