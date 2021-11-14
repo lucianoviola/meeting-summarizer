@@ -27,7 +27,14 @@ def query(payload, model_id, api_token):
 def load_model():
     return pipeline("summarization", model="lidiya/bart-large-xsum-samsum")
 
-summarizer = load_model()
+#summarizer = load_model()
+
+summaries = [
+    [{'summary_text': 'Rhea Rhea will join the meeting at 11. Customer wants to talk about the high level project. '}],
+             [{'summary_text': 'Customer explains the data science process for the project. '}],
+             [{'summary_text': 'Hair and makeup are important for predicting score and an air and makeup good show. The color of the dress is also important. '}],
+             [{'summary_text': 'Customer wants to develop a clustering algorithm that clusters the most important features of an event. '}],
+             [{'summary_text': 'Custo is planning to extend the K modes to include weighted K modes and multistage K modes around the computational issue.'}]]
 
 def main():
     path = st.file_uploader("Upload transcription", type=['csv', 'txt'])
@@ -38,7 +45,7 @@ def main():
     stringio = StringIO(path.getvalue().decode("utf-8"))
     string_data = stringio.read()
 
-    summaries = [summarizer(s) for s in chunks(string_data, 4_000)]
+    #summaries = [summarizer(s) for s in chunks(string_data, 4_000)]
 
     if summaries:
         st.write('### Summary:')
