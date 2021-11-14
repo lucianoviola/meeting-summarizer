@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 from io import StringIO
+from time import sleep
 
 from transformers import pipeline
 
@@ -45,6 +46,7 @@ def main():
 
     stringio = StringIO(path.getvalue().decode("utf-8"))
     string_data = stringio.read()
+    sleep(10)
 
     #summaries = [summarizer(s) for s in chunks(string_data, 4_000)]
 
