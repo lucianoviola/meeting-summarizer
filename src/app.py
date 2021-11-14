@@ -12,8 +12,7 @@ Made with :heart: by AE Studio
 """
 
 
-summaries = [
-    [[{'summary_text': 'Rhea will join the meeting at 11. Customer wants to talk about the high level project. '}],
+summaries = [[{'summary_text': 'Rhea will join the meeting at 11. Customer wants to talk about the high level project. '}],
      [{'summary_text': 'Customer explains the data science process for the project. '}],
      [{'summary_text': 'Hair and makeup are important for predicting score and an air and makeup good show. The color of the dress is also important. '}],
      [{'summary_text': 'Customer wants to develop a clustering algorithm that clusters the most important features of an event. '}],
@@ -26,7 +25,7 @@ summaries = [
      [{'summary_text': 'Customer wants to know how to improve the voting system.'}],
      [{'summary_text': 'Customer wants to know more details about the hybrid model for voting and creating scores for every item in a challenge. Customer and Jenny have been discussing it for more than 64 weeks.'}],
      [{'summary_text': 'Customer will work with the team on the technical and product side of the project.'}]]
- ]
+
 
 
 def chunks(lst, n):
