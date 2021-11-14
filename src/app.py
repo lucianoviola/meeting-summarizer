@@ -32,7 +32,7 @@ def load_model():
 
 summaries = [
     [{'summary_text': 'Rhea will join the meeting at 11. Customer wants to talk about the high level project. '}],
-             [{'summary_text': 'Explanation the data science process for the project. '}],
+             [{'summary_text': 'Luciano explains the data science process for the project. '}],
              [{'summary_text': 'Hair and makeup are important for predicting score and an air and makeup good show. The color of the dress is also important. '}],
              [{'summary_text': 'Customer wants to develop a clustering algorithm that clusters the most important features of an event. '}],
              [{'summary_text': 'We are planning to extend K modes to include weighted K modes and multistage K '
