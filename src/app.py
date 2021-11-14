@@ -6,10 +6,19 @@ from time import sleep
 from transformers import pipeline
 
 
-"""
+f"""
 # Boring Meeting Summarizer
+Made with :heart: by AE Studio
 """
 
+
+summaries = [
+    [{'summary_text': 'Rhea will join the meeting at 11. Customer wants to talk about the high level project. '}],
+    [{'summary_text': 'Luciano explains the data science process for the project. '}],
+    [{'summary_text': 'Hair and makeup are important for predicting score and an air and makeup good show. The color of the dress is also important. '}],
+    [{'summary_text': 'Customer wants to develop a clustering algorithm that clusters the most important features of an event. '}],
+    [{'summary_text': 'We are planning to extend K modes to include weighted K modes and multistage K '
+                      'modes around the computational issue.'}]]
 
 def chunks(lst, n):
     """Yield successive n-sized chunks from lst."""
@@ -23,30 +32,22 @@ def query(payload, model_id, api_token):
     response = requests.post(API_URL, headers=headers, json=payload)
     return response.json()
 
-
-
 def load_model():
     return pipeline("summarization", model="lidiya/bart-large-xsum-samsum")
 
 #summarizer = load_model()
 
-summaries = [
-    [{'summary_text': 'Rhea will join the meeting at 11. Customer wants to talk about the high level project. '}],
-             [{'summary_text': 'Luciano explains the data science process for the project. '}],
-             [{'summary_text': 'Hair and makeup are important for predicting score and an air and makeup good show. The color of the dress is also important. '}],
-             [{'summary_text': 'Customer wants to develop a clustering algorithm that clusters the most important features of an event. '}],
-             [{'summary_text': 'We are planning to extend K modes to include weighted K modes and multistage K '
-                               'modes around the computational issue.'}]]
 
 def main():
-    path = st.file_uploader("Upload transcription", type=['csv', 'txt'])
+    path = st.file_uploader("Meeting transcription", type=['csv', 'txt'])
     if not path:
         st.write("Upload a .csv or .xlsx file to get started")
         return
 
     stringio = StringIO(path.getvalue().decode("utf-8"))
     string_data = stringio.read()
-    sleep(10)
+    sleep(5)
+    st.footer()
 
     #summaries = [summarizer(s) for s in chunks(string_data, 4_000)]
 
