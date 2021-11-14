@@ -22,7 +22,8 @@ def query(payload, model_id, api_token):
     response = requests.post(API_URL, headers=headers, json=payload)
     return response.json()
 
-@st.cache
+
+@st.cache(hash_funcs={"MyUnhashableClass": lambda _: None})
 def load_model():
     return pipeline("summarization", model="lidiya/bart-large-xsum-samsum")
 
