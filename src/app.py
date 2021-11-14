@@ -16,7 +16,6 @@ def chunks(lst, n):
         yield lst[i:i + n]
 
 
-@st.cache
 def query(payload, model_id, api_token):
     headers = {"Authorization": f"Bearer {api_token}"}
     API_URL = f"https://api-inference.huggingface.co/models/{model_id}"
@@ -42,5 +41,4 @@ def main():
             st.write(s[0]['summary_text'])
 
 
-if __name__ == "__main__":
-    main()
+main()
