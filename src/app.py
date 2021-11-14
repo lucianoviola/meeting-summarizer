@@ -28,7 +28,7 @@ def load_model():
 
 
 def main():
-    summarizer = load_model
+    summarizer = load_model()
     path = st.file_uploader("Upload transcription", type=['csv', 'txt'])
     if not path:
         st.write("Upload a .csv or .xlsx file to get started")
